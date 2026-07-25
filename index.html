@@ -93,4 +93,333 @@
         .container {
             max-width: 900px;
             margin: 30px auto;
-            background: var(--
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            display: none; 
+        }
+
+        .container.active {
+            display: block;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 15px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: #000;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #result {
+            margin-top: 30px;
+            padding: 25px;
+            background: var(--bg-color);
+            border-left: 5px solid var(--primary);
+            border-radius: 8px;
+            display: none;
+        }
+
+        #result h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        #result p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Estilo da Página de Planos */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .price-card {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .price-card.featured {
+            border-color: var(--primary);
+            position: relative;
+        }
+
+        .price-card h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--text-main);
+            margin: 15px 0;
+        }
+
+        .price span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        .price-card ul {
+            list-style: none;
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+
+        .price-card ul li {
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .price-card ul li::before {
+            content: "✓";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .card-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-hire {
+            background: var(--primary);
+            color: #000;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .btn-hire:hover {
+            opacity: 0.9;
+        }
+
+        .btn-doubt {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn-doubt:hover {
+            border-color: var(--primary);
+            color: var(--text-main);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            max-width: 900px;
+            margin: 50px auto 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">VERTEX ACADMY</div>
+        <div class="nav-links">
+            <a id="tabHome" class="active" onclick="switchTab('home')">Início / Diagnóstico</a>
+            <a id="tabPlans" onclick="switchTab('plans')">Planos e Preços</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>VERTEX ACADMY</h1>
+        <p>Estratégia, Tráfego e Posicionamento de Alto Padrão para o seu Negócio</p>
+    </header>
+
+    <div id="sectionHome" class="container active">
+        <h2>Vertex Score</h2>
+        <p class="subtitle">Faça uma análise rápida do seu perfil e descubra o seu potencial de alcance digital.</p>
+        
+        <form id="auditForm">
+            <div class="form-group">
+                <label for="platform">Escolha a Plataforma:</label>
+                <select id="platform" required>
+                    <option value="instagram">Instagram</option>
+                    <option value="tiktok">TikTok</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="profileLink">Link ou @ do Perfil:</label>
+                <input type="text" id="profileLink" placeholder="Ex: @suaempresa ou https://instagram.com/suaempresa" required>
+            </div>
+
+            <button type="submit">Gerar Diagnóstico Gratuito</button>
+        </form>
+
+        <div id="result">
+            <h3 id="resultTitle"></h3>
+            <p id="resultText"></p>
+        </div>
+    </div>
+
+    <div id="sectionPlans" class="container">
+        <h2>Nossos Planos e Orçamentos</h2>
+        <p class="subtitle">Escolha a solução ideal para acelerar o crescimento do seu negócio</p>
+
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div>
+                    <h3>Pacote Básico</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Foco em Posicionamento e Orgânico</p>
+                    <div class="price">R$ 350 <span>/ mês</span></div>
+                    <ul>
+                        <li>Diagnóstico inicial completo</li>
+                        <li>Otimização de Bio e Destaques</li>
+                        <li>Estratégia de hashtags e cronograma</li>
+                        <li>Suporte e alinhamento quinzenal</li>
+                    </ul>
+                </div>
+                <div class="card-buttons">
+                    <a href="https://wa.me/5561995851205?text=Olá,%20quero%20fechar%20o%20Pacote%20Básico%20(R$%20350)." class="btn-hire" target="_blank">Quero Fechar o Plano</a>
+                    <a href="https://wa.me/5561995851205?text=Olá,%20tenho%20uma%20dúvida%20sobre%20o%20Pacote%20Básico." class="btn-doubt" target="_blank">Tirar Dúvidas</a>
+                </div>
+            </div>
+
+            <div class="price-card featured">
+                <div>
+                    <span style="background: var(--primary); color: #000; font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 4px; text-transform: uppercase;">Completo</span>
+                    <h3 style="margin-top: 8px;">Pacote Avançado</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Orgânico + Tráfego Pago Completo</p>
+                    <div class="price">R$ 650 <span>/ mês</span></div>
+                    <ul>
+                        <li>Tudo do Pacote Básico incluso</li>
+                        <li>Gestão de Tráfego Pago (Meta Ads)</li>
+                        <li>Foco em conversão local e WhatsApp</li>
+                        <li>Relatório e otimização mensal</li>
+                    </ul>
+                </div>
+                <div class="card-buttons">
+                    <a href="https://wa.me/5561995851205?text=Olá,%20quero%20fechar%20o%20Pacote%20Avançado%20(R$%20650)." class="btn-hire" target="_blank">Quero Fechar o Plano</a>
+                    <a href="https://wa.me/5561995851205?text=Olá,%20tenho%20uma%20dúvida%20sobre%20o%20Pacote%20Avançado." class="btn-doubt" target="_blank">Tirar Dúvidas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Vertex Acadmy. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function switchTab(tab) {
+            const homeSec = document.getElementById('sectionHome');
+            const plansSec = document.getElementById('sectionPlans');
+            const tabHome = document.getElementById('tabHome');
+            const tabPlans = document.getElementById('tabPlans');
+
+            if (tab === 'home') {
+                homeSec.classList.add('active');
+                plansSec.classList.remove('active');
+                tabHome.classList.add('active');
+                tabPlans.classList.remove('active');
+            } else {
+                plansSec.classList.add('active');
+                homeSec.classList.remove('active');
+                tabPlans.classList.add('active');
+                tabHome.classList.remove('active');
+            }
+        }
+
+        document.getElementById('auditForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const platform = document.getElementById('platform').value;
+            const profile = document.getElementById('profileLink').value;
+            const resultDiv = document.getElementById('result');
+            const resultTitle = document.getElementById('resultTitle');
+            const resultText = document.getElementById('resultText');
+
+            resultDiv.style.display = 'block';
+            resultTitle.innerHTML = `Análise Concluída para: ${profile}`;
+            resultText.innerHTML = `Identificamos que o seu perfil no ${platform.toUpperCase()} possui excelente potencial, mas apresenta gargalos na biografia e na frequência de conversão. <strong>Nota estimada: 6.5 / 10</strong>.<br><br>Para ver as opções de investimento e transformar o seu perfil em uma máquina de vendas, acesse a aba <strong>"Planos e Preços"</strong> no topo da página ou fale com nossa equipe!`;
+        });
+    </script>
+</body>
+</html>
