@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertex Acadmy | Diagnóstico e Estratégia Digital</title>
+    <title>Vertex Acadmy | Agência de Marketing Digital</title>
     <style>
         :root {
             --bg-color: #0D0D0D;
@@ -28,270 +28,69 @@
             padding: 20px;
         }
 
+        /* Menu de Navegação */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+        }
+
+        .logo {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 8px 15px;
+            border-radius: 6px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #000;
+            background: var(--primary);
+        }
+
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px 20px;
             border-bottom: 1px solid var(--border-color);
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         header h1 {
             color: var(--primary);
             font-size: 2.5rem;
             margin-bottom: 10px;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         header p {
             color: var(--text-muted);
             font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .container {
             max-width: 900px;
-            margin: 40px auto;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-        }
-
-        h2 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 1.8rem;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--text-muted);
-            font-weight: bold;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 14px;
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        input:focus, select:focus {
-            border-color: var(--primary);
-            outline: none;
-        }
-
-        button {
-            background-color: var(--primary);
-            color: #000;
-            border: none;
-            padding: 15px;
-            width: 100%;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: opacity 0.3s;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            opacity: 0.9;
-        }
-
-        /* Secção de Planos */
-        .pricing-section {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .price-card {
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 25px;
-            text-align: left;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .price-card.featured {
-            border-color: var(--primary);
-        }
-
-        .price-card h3 {
-            color: var(--primary);
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .price-card .price {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--text-main);
-            margin: 15px 0;
-        }
-
-        .price-card .price span {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: normal;
-        }
-
-        .price-card ul {
-            list-style: none;
-            margin: 20px 0;
-            flex-grow: 1;
-        }
-
-        .price-card ul li {
-            margin-bottom: 10px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .price-card ul li::before {
-            content: "✓";
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .btn-plan {
-            display: block;
-            text-align: center;
-            background: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: all 0.3s;
-        }
-
-        .btn-plan:hover {
-            background: var(--primary);
-            color: #000;
-        }
-
-        #result {
-            margin-top: 25px;
-            padding: 20px;
-            background: var(--bg-color);
-            border-left: 4px solid var(--primary);
-            border-radius: 4px;
-            display: none;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>VERTEX ACADMY</h1>
-        <p>Inteligência, Posicionamento e Escala para o seu Negócio</p>
-    </header>
-
-    <div class="container">
-        <h2>Vertex Score — Diagnóstico de Perfil</h2>
-        <form id="auditForm">
-            <div class="form-group">
-                <label for="platform">Escolha a Plataforma:</label>
-                <select id="platform" required>
-                    <option value="instagram">Instagram</option>
-                    <option value="tiktok">TikTok</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="profileLink">Link ou @ do Perfil:</label>
-                <input type="text" id="profileLink" placeholder="Ex: @sualoja ou https://instagram.com/sualoja" required>
-            </div>
-
-            <button type="submit">Gerar Diagnóstico Gratuito</button>
-        </form>
-
-        <div id="result">
-            <h3 id="resultTitle"></h3>
-            <p id="resultText"></p>
-        </div>
-    </div>
-
-    <div class="container pricing-section">
-        <h2>Nossos Planos e Soluções</h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 20px;">Escolha a estratégia ideal para o tamanho do seu negócio</p>
-        
-        <div class="pricing-grid">
-            <div class="price-card">
-                <div>
-                    <h3>Pacote Básico</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Foco em Posicionamento e Orgânico</p>
-                    <div class="price">R$ 350 <span>/ mês</span></div>
-                    <ul>
-                        <li>Diagnóstico inicial completo</li>
-                        <li>Otimização de Bio e Destaques</li>
-                        <li>Estratégia de hashtags e cronograma</li>
-                        <li>Suporte e alinhamento quinzenal</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/5561995851205?text=Olá,%20quero%20contratar%20o%20Pacote%20Básico%20da%20Vertex!" class="btn-plan" target="_blank">Contratar Básico</a>
-            </div>
-
-            <div class="price-card featured">
-                <div>
-                    <span style="background: var(--primary); color: #000; font-size: 0.75rem; font-weight: bold; padding: 3px 8px; border-radius: 4px; text-transform: uppercase;">Mais Popular</span>
-                    <h3 style="margin-top: 10px;">Pacote Avançado</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Orgânico + Tráfego Pago Completo</p>
-                    <div class="price">R$ 650 <span>/ mês</span></div>
-                    <ul>
-                        <li>Tudo do Pacote Básico incluso</li>
-                        <li>Gestão de Tráfego Pago (Meta Ads)</li>
-                        <li>Foco em conversão local e WhatsApp</li>
-                        <li>Relatório e otimização mensal</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/5561995851205?text=Olá,%20quero%20contratar%20o%20Pacote%20Avançado%20da%20Vertex!" class="btn-plan" target="_blank">Contratar Avançado</a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('auditForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const platform = document.getElementById('platform').value;
-            const profile = document.getElementById('profileLink').value;
-            const resultDiv = document.getElementById('result');
-            const resultTitle = document.getElementById('resultTitle');
-            const resultText = document.getElementById('resultText');
-
-            // Simulação de análise dinâmica
-            resultDiv.style.display = 'block';
-            resultTitle.innerHTML = `Análise Concluída para: ${profile}`;
-            resultText.innerHTML = `Identificamos que o seu ${platform.toUpperCase()} possui potencial de alcance, mas carece de chamadas para ação diretas e otimização de biografia. <strong>Nota estimada: 6.2 / 10</strong>. <br><br>Para destravar o seu crescimento e atrair clientes todos os dias, conheça nossos planos abaixo e fale conosco no WhatsApp!`;
-        });
-    </script>
-</body>
-</html>
+            margin: 30px auto;
+            background: var(--
